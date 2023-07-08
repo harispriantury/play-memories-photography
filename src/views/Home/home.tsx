@@ -7,6 +7,7 @@ import { useCustom } from "./hooks"
 import { Pricing } from "../../components/Pricing/Pricing"
 
 export const Home = () => {
+
   const { data } = useCustom();
   return (
     <div className="bg-white">

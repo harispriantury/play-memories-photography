@@ -57,6 +57,7 @@ export const CarouselPage = () => {
                     height: "auto",
                     maxHeight: "100%",
                     objectFit: "cover",
+                    zIndex: 1
                 }} src={activeImage}
                     alt=""
                     className="duration-1000"

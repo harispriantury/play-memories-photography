@@ -107,7 +107,7 @@ export const PriceList = () => {
         }
     ]
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center h-screen">
             <div className="w-10/12">
                 <h1 className="text-4xl text-center font-semibold mt-20 text-[#27374D]">
                     PRICING

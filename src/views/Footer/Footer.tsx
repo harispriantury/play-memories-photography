@@ -5,7 +5,7 @@ export const Footer = () => {
         <div id="footer" className="bg-[#27374D] h-60 flex justify-center py-10">
             <div className="w-10/12 flex justify-between">
                 <div className="text-white w-1/2">
-                    <div><img className="hover:scale-105 hover:duration-1000" style={{ width: "200px" }} src={logo} alt="" /></div>
+                    <div><img className="" style={{ width: "200px" }} src={logo} alt="" /></div>
                     <p>The most trusted and complete photography services in Indonesia</p>
                 </div>
                 <div className="grid grid-cols-3">

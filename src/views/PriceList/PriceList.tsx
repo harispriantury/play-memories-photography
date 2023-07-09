@@ -1,42 +1,14 @@
 import React from "react"
 import { CustomButton } from "../../components/Button/CustomButton"
-
-// interface ICategories {
-//     name: string,
-//     value: string
-// }
+import { dataTable } from "../../Data/dataTable"
+import { useNavigate } from "react-router-dom"
 
 interface IHeaderTable {
     label: string
 }
 
-interface IDataTable {
-    category: string,
-    duration: string,
-    numberOfPhotos: number
-    normalPrice: number,
-    discount: number,
-}
-
 export const PriceList = () => {
-    // const categories: ICategories[] = [
-    //     {
-    //         name: 'Sport Photography',
-    //         value: 'sport'
-    //     },
-    //     {
-    //         name: 'Potrait Photography',
-    //         value: 'potrait'
-    //     },
-    //     {
-    //         name: 'Event Photography',
-    //         value: 'event'
-    //     },
-    //     {
-    //         name: 'Prewedding Photography',
-    //         value: 'prewedding'
-    //     }
-    // ]
+    const navigate = useNavigate()
 
     const headerTable: IHeaderTable[] = [
         {
@@ -62,50 +34,6 @@ export const PriceList = () => {
         }
     ]
 
-    const dataTable: IDataTable[] = [
-        {
-            category: 'Sport Photography',
-            duration: '1 Hour',
-            numberOfPhotos: 200,
-            discount: 10,
-            normalPrice: 250000,
-        },
-        {
-            category: 'Sport Photography',
-            duration: '2 Hour',
-            numberOfPhotos: 350,
-            discount: 20,
-            normalPrice: 350000,
-        },
-        {
-            category: 'Sport Photography',
-            duration: '3 Hour',
-            numberOfPhotos: 500,
-            discount: 26,
-            normalPrice: 400000,
-        },
-        {
-            category: 'Potrait Photography',
-            duration: '1 Hour',
-            numberOfPhotos: 70,
-            discount: 5,
-            normalPrice: 120000,
-        },
-        {
-            category: 'Event Photography',
-            duration: '4 Hour',
-            numberOfPhotos: 700,
-            discount: 42,
-            normalPrice: 500000,
-        },
-        {
-            category: 'Prewedding Photography',
-            duration: '1 Hour',
-            numberOfPhotos: 70,
-            discount: 48,
-            normalPrice: 200000,
-        }
-    ]
     return (
         <div className="flex justify-center h-screen">
             <div className="w-10/12">
@@ -147,8 +75,8 @@ export const PriceList = () => {
                                                 currency: "IDR"
                                             }).format(item.normalPrice * (100 - item.discount) / 100)}</td>
                                             <td className="border border-black text-center">
-                                                <CustomButton name="BOOK NOW" style="bg-[#27374D] text-white" handleClick={() => { console.log(item); }
-                                                } />
+                                                <CustomButton name="BOOK NOW" style="bg-[#27374D] text-white" handleClick={() => { navigate('/order'); }}
+                                                />
                                             </td>
                                         </tr>
                                     )
@@ -157,21 +85,6 @@ export const PriceList = () => {
                         </tbody>
                     </table>
                 </div>
-                {/* <div className="border border-black p-8 flex justify-center">
-                    <select
-                        placeholder="select category"
-                        className="px-5 py-3"
-                    >
-                        {
-                            categories.map((item) => {
-                                return (
-                                    <option key={item.value}>{item.name}</option>
-                                )
-                            })
-                        }
-                    </select>
-
-                </div> */}
             </div>
         </div>
     )

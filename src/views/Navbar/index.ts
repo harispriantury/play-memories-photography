@@ -13,6 +13,10 @@ const navList: INavList[] = [
     url: '/pricing',
   },
   {
+    name: 'ORDER',
+    url: '/order',
+  },
+  {
     name: 'GALLERY',
     url: '/gallery',
   },

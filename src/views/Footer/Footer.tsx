@@ -11,15 +11,15 @@ export const Footer = () => {
                 <div className="grid grid-cols-3">
                     <div className="text-white">
                         <h1 className="pb-3">LEARN MORE</h1>
-                        <p>About Us</p>
-                        <p>FAQ</p>
-                        <p>Terms and Conditions</p>
-                        <p>Privacy Police</p>
+                        <p className="cursor-pointer">About Us</p>
+                        <p className="cursor-pointer">FAQ</p>
+                        <p className="cursor-pointer">Terms and Conditions</p>
+                        <p className="cursor-pointer">Privacy Police</p>
                     </div>
                     <div className="text-white">
                         <h1 className="pb-3">SOCIAL</h1>
-                        <p>Facebook</p>
-                        <p>Instagram</p>
+                        <p className="cursor-pointer" onClick={() => window.open('https://www.instagram.com/play.memories_/?igshid=MjEwN2IyYWYwYw%3D%3D', '_black')}>Instagram</p>
+                        <p className="cursor-pointer" onClick={() => window.open('https://www.facebook.com/harispriantury', '_black')}>Facebook</p>
                     </div>
                     <div className="text-white">
                         <h1 className="pb-3">CONTACT</h1>

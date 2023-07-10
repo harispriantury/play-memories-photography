@@ -21,7 +21,7 @@ export const CarouselPage = () => {
     const [option] = useState<number[]>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     const [selectedImage, setSelectedImage] = useState(0)
     return (
-        <div className="flex justify-center items-center gap-8 relative">
+        <div className="w-full max-sm:gap-2 flex justify-center items-center gap-8 relative">
             <BsArrowLeftSquareFill
                 className="hover:scale-105 cursor-pointer"
                 color="27374D"
@@ -64,7 +64,7 @@ export const CarouselPage = () => {
                     }
                 }}
             />
-            <div className="absolute w-1/3 z-10 flex justify-around gap-8 bottom-10">
+            <div className="absolute w-1/3 max-md:w-1/4 max-md:gap-3 max-sm:w-1/12 max-sm:gap-2 z-10 flex justify-around gap-8 bottom-5">
                 {
                     option.map((item) => {
                         return (
@@ -72,7 +72,7 @@ export const CarouselPage = () => {
                                 onClick={() => {
                                     setSelectedImage(item * 100)
                                 }}
-                                className={`font-bold hover:scale-125 text-white ${item * 100 === selectedImage ? 'scale-150 opacity-50' : 'opacity-30'}`}
+                                className={`text-xs hover:scale-125 text-white ${item * 100 === selectedImage ? 'scale-150 opacity-50' : 'opacity-30'}`}
                                 name={`${item}`}
                                 value={`${item}`}
                                 key={item}>

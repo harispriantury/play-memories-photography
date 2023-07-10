@@ -12,8 +12,8 @@ export const NavbarList: FC<TNavbarList> = ({ name, url, style }) => {
     return (
         <button onClick={() => {
             navigate(`${url}`)
-        }} className={`flex justify-between gap-3 px-4 py-3 rounded-lg hover:text-slate-500 duration-500" ${style}`}>
-            <p>{name}</p>
+        }} className={` whitespace-nowrap w-auto gap-3 px-4 py-3 max-md:px-1 max-md:py-1 max-sm:text-sm rounded-lg hover:text-slate-500 duration-500" ${style}`}>
+            {name}
         </button>
     )
 }

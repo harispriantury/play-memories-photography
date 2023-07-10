@@ -35,21 +35,21 @@ export const Step: FC<TStep> = ({ style }) => {
     ]
     return (
         <>
-            <div className={`w-8/12 ${style}`}>
+            <div className={`max-sm:w-11/12 max-lg:w-10/12 w-8/12 ${style}`}>
                 <div>
-                    <h1 className="font-bold text-4xl mb-8 text-white text-center">ONLY 4 STEPS</h1>
+                    <h1 className="font-bold max-md:text-lg text-4xl text-white text-center">ONLY 4 STEPS</h1>
                 </div>
                 <div className="grid grid-cols-4">
                     {
                         dataStep.map((item) => {
                             return (
                                 <div key={item.numb} className="flex flex-col items-center gap-4 p-6">
-                                    <div className="w-20 h-20 rounded-full bg-white flex justify-center items-center">
-                                        <span className="text-3xl text-[#27374D]">{item.numb}</span>
+                                    <div className="max-sm:w-12 max-sm:h-12 w-20 h-20 rounded-full bg-white flex justify-center items-center">
+                                        <span className="max-sm:text-xl text-3xl text-[#27374D]">{item.numb}</span>
                                     </div>
                                     <div className="text-center text-white">
-                                        <h1 className="text-xl font-bold">{item.title}</h1>
-                                        <p className="text-sm">{item.subtitle}</p>
+                                        <h1 className="max-sm:text-base  text-xl font-bold">{item.title}</h1>
+                                        <p className="max-sm:text-[10px] text-sm">{item.subtitle}</p>
                                     </div>
                                 </div>
                             )

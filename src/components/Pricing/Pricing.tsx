@@ -57,17 +57,17 @@ export const Pricing: FC<TPricing> = ({ style }) => {
     return (
         <>
             <div className={`w-10/12 ${style}`}>
-                <h1 className="text-4xl font-semibold text-white text-center p-8">BEST CHOISES</h1>
-                <div className="grid grid-cols-3 w-full bg-[#DDE6ED] rounded-3xl shadow-xl">
+                <h1 className="max-md:text-xl text-4xl font-semibold text-white text-center max-sm:p-2 p-8">BEST CHOISES</h1>
+                <div className="max-sm:mt-4 grid grid-cols-3 w-full bg-[#DDE6ED] rounded-3xl shadow-xl">
                     {
                         dataPricing.map((item, index) => {
                             return (
-                                <div key={index} className="mx-8 flex flex-col items-center gap-8 p-8">
-                                    <item.icon color="#27374D" size={90} />
+                                <div key={index} className="max-sm:mx-2 mx-8 flex flex-col items-center gap-8 p-8">
+                                    <item.icon color="#27374D" size={80} />
                                     <div className="text-center">
-                                        <h1 className="text-[#27374D] text-3xl font-bold">{item.type}</h1>
-                                        <h1 className="text-[#27374D] text-2xl">{item.totalHour} Hour</h1>
-                                        <p className="text-[#27374D] text-lg">{item.totalPhoto} Photo</p>
+                                        <h1 className="text-[#27374D] max-sm:text-base max-md:text-xl text-3xl font-bold">{item.type}</h1>
+                                        <h1 className="text-[#27374D] max-sm:text-sm text-2xl">{item.totalHour} Hour</h1>
+                                        <p className="text-[#27374D] max-sm:text-sm text-lg">{item.totalPhoto} Photo</p>
                                     </div>
                                 </div>
 

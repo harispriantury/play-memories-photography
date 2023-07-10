@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+api location = https://farizdotid.com/blog/dokumentasi-api-daerah-indonesia/
+collor pallete = https://colorhunt.co/palette/27374d526d829db2bfdde6ed
 
 ## Available Scripts
 

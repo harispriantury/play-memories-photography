@@ -10,7 +10,7 @@ export const Home = () => {
 
   const { data } = useCustom();
   return (
-    <div className="bg-white">
+    <div className="">
       <div>
         <CarouselPage />
       </div>

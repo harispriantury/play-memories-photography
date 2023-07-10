@@ -44,19 +44,19 @@ export const Superiority = () => {
         <>
             <div className="text-center w-10/12 mt-20 rounded-3xl bg-[#DDE6ED] shadow-xl">
                 <div className="p-8">
-                    <h1 className="text-4xl font-bold text-[#27374D]">PLAY MEMORIES | PHOTOGRAPHY</h1>
-                    <p className="text-xl pt-2 text-[#27374D]">FIND THE BEST PHOTOGRAPHER FOR YOUR EVERY NEED</p>
+                    <h1 className="max-sm:text-xl text-4xl font-bold text-[#27374D]">PLAY MEMORIES | PHOTOGRAPHY</h1>
+                    <p className="max-sm:text-base text-xl pt-2 text-[#27374D]">FIND THE BEST PHOTOGRAPHER FOR YOUR EVERY NEED</p>
                 </div>
                 <div className="grid grid-cols-4">
                     {
                         dataSuperiority.map((item) => {
                             return (
                                 <>
-                                    <div className=" bg-white flex flex-col items-center gap-4 px-6 py-8 rounded-2xl m-8 shadow-lg">
+                                    <div className=" bg-white flex flex-col items-center gap-4 px-6 py-8 rounded-2xl max-sm:m-1 max-md:m-2 max-lg:m-3 m-6 shadow-lg">
                                         <item.image color="27374D" size={60} />
                                         <div>
-                                            <h1 className="text-lg text-[#27374D]">{item.title}</h1>
-                                            <p className="text-sm text-[#27374D]">{item.subTitle}</p>
+                                            <h1 className="max-sm:text-base text-xl font-bold text-[#27374D]">{item.title}</h1>
+                                            <p className="max-sm:text-xs text-sm text-[#27374D]">{item.subTitle}</p>
                                         </div>
                                     </div>
                                 </>

@@ -24,27 +24,27 @@ export const Order = () => {
             {
                 toast && <Toast />
             }
-            <div className="w-8/12 bg-[#DDE6ED] my-10 rounded-3xl shadow-xl">
-                <h1 className="text-center font-semibold text-4xl my-10 text-[#27374D]">ORDER</h1>
+            <div className="max-sm:w-11/12 max-md:w-10/12 max-lg:w-9/12 w-8/12 bg-[#DDE6ED] my-10 rounded-3xl shadow-xl">
+                <h1 className="max-md:text-xl text-center font-semibold text-4xl my-10 text-[#27374D]">ORDER</h1>
                 <form onSubmit={handleSubmit}
                 >
                     <div className="w-full flex flex-col gap-8 px-8 pb-8 text-[#27374D]">
                         <div className="grid grid-cols-12">
-                            <label className="col-span-5 py-2" htmlFor="">Name</label>
+                            <label className="max-md:col-span-2 col-span-5 py-2" htmlFor="">Name</label>
                             <input
                                 required
                                 name="name"
                                 value={dataOrder?.name}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => { handleChange(e); }}
-                                className="col-span-6 py-2 px-2 rounded-lg"
+                                className="max-md:col-span-12 col-span-6 py-2 px-2 rounded-lg"
                                 type="text"
                                 placeholder="Enter your name"
 
                             />
                         </div>
                         <div className="grid grid-cols-12">
-                            <label className="col-span-5 py-2" htmlFor="">Variant</label>
-                            <div className="col-span-6">
+                            <label className="max-md:col-span-2 col-span-5 py-2" htmlFor="">Variant</label>
+                            <div className="max-md:col-span-12 col-span-6">
                                 <CustomDropdownCategory
                                     name="variant"
                                     data={dataTable}
@@ -54,10 +54,10 @@ export const Order = () => {
                             </div>
                         </div>
                         <div className="grid grid-cols-12">
-                            <label className="col-span-5 py-2" htmlFor="">Date</label>
+                            <label className="max-md:col-span-2 col-span-5 py-2" htmlFor="">Date</label>
                             <input
                                 required
-                                className="col-span-6 px-2 py-2 text-[#27374D] rounded-lg"
+                                className="max-md:col-span-12 col-span-6 px-2 py-2 text-[#27374D] rounded-lg"
                                 name="date"
                                 type="datetime-local"
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,8 +66,8 @@ export const Order = () => {
                             />
                         </div>
                         <div className="grid grid-cols-12">
-                            <label className="col-span-5 py-2" htmlFor="">District</label>
-                            <div className="col-span-6">
+                            <label className="max-md:col-span-2 col-span-5 py-2" htmlFor="">District</label>
+                            <div className="max-md:col-span-12 col-span-6">
                                 <DropdownLocation
                                     data={district}
                                     label="nama"
@@ -77,8 +77,8 @@ export const Order = () => {
                             </div>
                         </div>
                         <div className="grid grid-cols-12">
-                            <label className="col-span-5 py-2" htmlFor="">Village</label>
-                            <div className="col-span-6">
+                            <label className="max-md:col-span-2 col-span-5 py-2" htmlFor="">Village</label>
+                            <div className="max-md:col-span-12 col-span-6">
                                 <DropdownLocation
                                     data={subDistrict}
                                     label="nama"

@@ -41,7 +41,7 @@ export const Navbar: FC<TNavbar> = ({ style, showButton = false }) => {
                 navList.map((item) => {
                   return (
                     <div key={item.name}>
-                      <NavbarList url={item.url} name={item.name} style={`${location.pathname === item.url ? 'text-slate-500 font-semibold' : 'text-white'}`} />
+                      <NavbarList url={item.url} name={item.name} style={`${location.pathname === item.url ? 'text-slate-500 font-semibold' : 'max-lg:text-sm text-white'}`} />
                     </div>
                   )
                 })

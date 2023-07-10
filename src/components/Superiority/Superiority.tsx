@@ -42,12 +42,12 @@ export const Superiority = () => {
     ]
     return (
         <>
-            <div className="text-center w-10/12 mt-20 rounded-3xl bg-[#DDE6ED] shadow-xl">
+            <div className="text-center max-md:w-11/12 w-10/12 mt-20 rounded-3xl bg-[#DDE6ED] shadow-xl">
                 <div className="p-8">
                     <h1 className="max-sm:text-xl text-4xl font-bold text-[#27374D]">PLAY MEMORIES | PHOTOGRAPHY</h1>
                     <p className="max-sm:text-base text-xl pt-2 text-[#27374D]">FIND THE BEST PHOTOGRAPHER FOR YOUR EVERY NEED</p>
                 </div>
-                <div className="grid grid-cols-4">
+                <div className="grid max-md:grid-cols-2 grid-cols-4">
                     {
                         dataSuperiority.map((item) => {
                             return (

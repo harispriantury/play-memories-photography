@@ -35,8 +35,8 @@ export const Gallery = () => {
     return (
         <div className="flex justify-center">
             <div className=" w-10/12 mb-16">
-                <h1 className="text-4xl text-center text-[#27374D] font-semibold p-20">GALLERY PHOTO</h1>
-                <div className="grid grid-cols-3 gap-2">
+                <h1 className="max-md:text-xl max-md:p-10 text-4xl text-center text-[#27374D] font-semibold p-20">GALLERY PHOTO</h1>
+                <div className="grid max-md:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 gap-2">
                     <div className="">
                         {
                             column1.slice(0, 7).map((item, index) => {

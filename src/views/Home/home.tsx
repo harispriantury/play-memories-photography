@@ -21,7 +21,7 @@ export const Home = () => {
         <Step style="" />
       </div>
       <div className="bg-[#27374D] h-[500px] relative flex flex-col items-center">
-        <Pricing style="absolute -bottom-48" />
+        <Pricing style="absolute -bottom-60" />
 
       </div>
       <div className="pt-60 flex justify-center bg-white">

@@ -14,8 +14,8 @@ interface IDataRating {
 export const Rating: FC<IDataRating> = ({ data }) => {
     return (
         <>
-            <div className="w-10/12 pb-20 flex flex-col items-center">
-                <h1 className="max-md:text-xl text-4xl text-[#27374D] font-semibold p-8">Satisfied Customer Testimoni</h1>
+            <div className="w-10/12 max-sm:mt-28 pb-20 flex flex-col items-center">
+                <h1 className="max-md:text-xl text-4xl text-[#27374D] text-center font-semibold p-8">Satisfied Customer Testimoni</h1>
                 <div className=" w-full flex max-sm:gap-0 max-md:gap-1 max-lg:gap-2 gap-3 overflow-x-scroll">
                     {
                         data.map((item) => {

@@ -3,8 +3,8 @@ import logo from '../../Assets/icons/wm.png.png'
 export const Footer = () => {
     return (
         <div id="footer" className="bg-[#27374D] h-60 flex justify-center py-10">
-            <div className="w-10/12 flex justify-between">
-                <div className="text-white w-1/2">
+            <div className="max-md:w-11/12 w-10/12 flex justify-between">
+                <div className="max-md:hidden text-white w-1/2">
                     <div><img className="" style={{ width: "200px" }} src={logo} alt="" /></div>
                     <p>The most trusted and complete photography services in Indonesia</p>
                 </div>

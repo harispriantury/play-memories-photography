@@ -56,9 +56,9 @@ export const Pricing: FC<TPricing> = ({ style }) => {
     ]
     return (
         <>
-            <div className={`w-10/12 ${style}`}>
+            <div className={`w-10/12 max-sm:-bottom-72 ${style}`}>
                 <h1 className="max-md:text-xl text-4xl font-semibold text-white text-center max-sm:p-2 p-8">BEST CHOISES</h1>
-                <div className="max-sm:mt-4 grid grid-cols-3 w-full bg-[#DDE6ED] rounded-3xl shadow-xl">
+                <div className="max-sm:mt-4 grid max-sm:grid-cols-2 grid-cols-3 w-full bg-[#DDE6ED] rounded-3xl shadow-xl">
                     {
                         dataPricing.map((item, index) => {
                             return (

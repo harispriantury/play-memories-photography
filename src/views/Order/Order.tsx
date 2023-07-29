@@ -1,29 +1,32 @@
 import React from "react"
 import { dataTable } from "../../Data/dataTable"
 import { CustomDropdownCategory } from "../../components/CustomDropdown/CustomDropdown"
-import { DropdownLocation } from "../../components/CustomDropdown/DropdownLocation"
 import { CustomButton } from "../../components/Button/CustomButton"
-import { Toast } from "../../components/Toast/toast"
 import { useCustom } from "./hooks"
+import { connect, useDispatch, useSelector } from "react-redux"
+import { RootState } from "../../Redux/store"
+import { changeDate, changeLocation, changeName, changeVariant } from "../../Redux/order/orderslice"
+
 
 export const Order = () => {
+
+    const orderState = (state: RootState) => state.order;
+
     const {
-        data: {
-            dataOrder,
-            district,
-            subDistrict,
-            toast
-        }, method: {
-            handleChange,
-            handleSubmit
-        } } = useCustom()
+        name,
+        date,
+        location,
+        variant
+    } = useSelector(orderState)
+    const dispatch = useDispatch();
+
+    const { method: {
+        handleSubmit
+    } } = useCustom()
 
 
     return (
         <div className="flex justify-center">
-            {
-                toast && <Toast />
-            }
             <div className="max-sm:w-11/12 max-md:w-10/12 max-lg:w-9/12 w-8/12 bg-[#DDE6ED] my-10 rounded-3xl shadow-xl">
                 <h1 className="max-md:text-xl text-center font-semibold text-4xl my-10 text-[#27374D]">ORDER</h1>
                 <form onSubmit={handleSubmit}
@@ -34,8 +37,8 @@ export const Order = () => {
                             <input
                                 required
                                 name="name"
-                                value={dataOrder?.name}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { handleChange(e); }}
+                                value={name}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch(changeName(e.target.value))}
                                 className="max-md:col-span-12 col-span-6 py-2 px-2 rounded-lg"
                                 type="text"
                                 placeholder="Enter your name"
@@ -48,44 +51,35 @@ export const Order = () => {
                                 <CustomDropdownCategory
                                     name="variant"
                                     data={dataTable}
-                                    value="category"
-                                    handleChange={handleChange}
+                                    value={variant}
+                                    handleChange={(e: React.ChangeEvent<HTMLSelectElement>) => { dispatch(changeVariant(e.target.value)) }}
                                 />
                             </div>
                         </div>
                         <div className="grid grid-cols-12">
                             <label className="max-md:col-span-2 col-span-5 py-2" htmlFor="">Date</label>
                             <input
+                                value={date}
                                 required
                                 className="max-md:col-span-12 col-span-6 px-2 py-2 text-[#27374D] rounded-lg"
                                 name="date"
                                 type="datetime-local"
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                    handleChange(e)
+                                    dispatch(changeDate(e.target.value))
                                 }}
                             />
                         </div>
                         <div className="grid grid-cols-12">
-                            <label className="max-md:col-span-2 col-span-5 py-2" htmlFor="">District</label>
-                            <div className="max-md:col-span-12 col-span-6">
-                                <DropdownLocation
-                                    data={district}
-                                    label="nama"
-                                    name="district"
-                                    handleChange={handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className="grid grid-cols-12">
-                            <label className="max-md:col-span-2 col-span-5 py-2" htmlFor="">Village</label>
-                            <div className="max-md:col-span-12 col-span-6">
-                                <DropdownLocation
-                                    data={subDistrict}
-                                    label="nama"
-                                    name="village"
-                                    handleChange={handleChange}
-                                />
-                            </div>
+                            <label className="max-md:col-span-2 col-span-5 py-2" htmlFor="">Location</label>
+                            <input
+                                required
+                                name="location"
+                                value={location}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => { dispatch(changeLocation(e.target.value)) }}
+                                className="max-md:col-span-12 col-span-6 py-2 px-2 rounded-lg"
+                                type="text"
+                                placeholder="Enter location"
+                            />
                         </div>
                         <div className="flex justify-center">
                             <CustomButton type={true} name="ORDER NOW" style="bg-[#27374D] text-white" />
@@ -97,3 +91,9 @@ export const Order = () => {
         </div >
     )
 }
+
+const mapStateToProps = (state: any) => ({
+    data: state.OrderReducer
+})
+
+export default connect(mapStateToProps)(Order);

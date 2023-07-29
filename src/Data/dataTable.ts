@@ -1,4 +1,4 @@
-interface IDataTable {
+export interface IDataTable {
   id: number;
   category: string;
   duration: string;
@@ -21,7 +21,7 @@ export const dataTable: IDataTable[] = [
     category: 'Sport Photography',
     duration: '2 Hour',
     numberOfPhotos: 350,
-    discount: 20,
+    discount: 12,
     normalPrice: 350000,
   },
   {
@@ -29,23 +29,23 @@ export const dataTable: IDataTable[] = [
     category: 'Sport Photography',
     duration: '3 Hour',
     numberOfPhotos: 500,
-    discount: 26,
+    discount: 19,
     normalPrice: 400000,
   },
   {
     id: 4,
     category: 'Potrait Photography',
-    duration: '1 Hour',
+    duration: '0.5 Hour',
     numberOfPhotos: 70,
     discount: 5,
-    normalPrice: 120000,
+    normalPrice: 150000,
   },
   {
     id: 5,
     category: 'Event Photography',
     duration: '4 Hour',
     numberOfPhotos: 700,
-    discount: 42,
+    discount: 21,
     normalPrice: 500000,
   },
   {

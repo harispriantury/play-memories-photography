@@ -2,6 +2,8 @@ import React from "react"
 import { CustomButton } from "../../components/Button/CustomButton"
 import { dataTable } from "../../Data/dataTable"
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { changeVariant } from "../../Redux/order/orderslice"
 
 interface IHeaderTable {
     label: string
@@ -9,6 +11,7 @@ interface IHeaderTable {
 
 export const PriceList = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch();
 
     const headerTable: IHeaderTable[] = [
         {
@@ -33,6 +36,11 @@ export const PriceList = () => {
             label: 'ACTION'
         }
     ]
+
+    const handleClick = (url: string, id: number) => {
+        dispatch(changeVariant(String(id)))
+        navigate(`${url}`);
+    }
 
     return (
         <div className="flex justify-center mb-mb-32">
@@ -75,7 +83,7 @@ export const PriceList = () => {
                                                 currency: "IDR"
                                             }).format(item.normalPrice * (100 - item.discount) / 100)}</td>
                                             <td className="border max-md:text-[8px] border-black text-center">
-                                                <CustomButton name="BOOK NOW" style="max-sm:px-1 max-sm:py-0 max-sm:text-[8px] bg-[#27374D] text-white" handleClick={() => { navigate('/order'); }}
+                                                <CustomButton name="BOOK NOW" style="max-sm:px-1 max-sm:py-0 max-sm:text-[8px] bg-[#27374D] text-white" handleClick={() => { handleClick('/order', item.id) }}
                                                 />
                                             </td>
                                         </tr>
